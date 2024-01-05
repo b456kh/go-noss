@@ -191,7 +191,7 @@ func mine(ctx context.Context, messageId string, client *ethclient.Client) {
 		fmt.Println("Response Status:", resp.Status)
 		spendTime := time.Since(startTime)
 		// fmt.Println("Response Body:", string(body))
-		fmt.Println(wrapperJSON)
+		fmt.Println(string(wrapperJSON))
 		fmt.Println(nostr.Now().Time(), "spend: ", spendTime, "!!!!!!!!!!!!!!!!!!!!!published to:", evNew.ID)
 		atomic.StoreInt32(&nonceFound, 0)
 	case <-ctx.Done():
