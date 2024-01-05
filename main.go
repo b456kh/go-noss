@@ -165,8 +165,9 @@ func mine(ctx context.Context, messageId string, client *ethclient.Client) {
 			"event": eventJSON,
 		}
 
-		// 将包装后的对象序列化成JSON wrapperJSON, err := json.MarshalIndent(wrapper, "", "  ") // 使用MarshalIndent美化输出
-		wrapperJSON, err := json.Marshal(wrapper)
+		// 将包装后的对象序列化成JSON 
+		wrapperJSON, err := json.MarshalIndent(wrapper, "", "  ") // 使用MarshalIndent美化输出
+		// wrapperJSON, err := json.Marshal(wrapper)
 		if err != nil {
 			log.Fatalf("Error marshaling wrapper: %v", err)
 		}
